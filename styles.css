@@ -1,0 +1,172 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap');
+
+/* General */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body{
+    height: 100vh;
+}
+
+body{
+    font-family: var(--font-family);
+    display: flex;
+    justify-content: center;
+    background-color: var(--Very-light-grayish-blue);
+}
+
+a{
+    text-decoration: none;
+    color: var(--Dark-grayish-blue);
+}
+
+:root{
+    --Red: hsl(1, 90%, 64%);
+    --Blue: hsl(219, 85%, 26%);
+    --White: hsl(0, 0%, 100%);
+    --Very-light-grayish-blue: hsl(210, 60%, 98%);
+    --Light-grayish-blue-1: hsl(211, 68%, 94%);
+    --Light-grayish-blue-2: hsl(205, 33%, 90%);
+    --Grayish-blue: hsl(219, 14%, 63%);
+    --Dark-grayish-blue: hsl(219, 12%, 42%);
+    --Very-dark-blue: hsl(224, 21%, 14%);
+    --font-size-paragraph: 16px;
+    --font-family: 'Plus Jakarta Sans', sans-serif;
+    --width-mobile: 375px;
+    --width-desktop: 1440px;
+}
+
+.notifications{
+    max-width: 730px;
+    background-color: var(--White);
+    border-radius: 15px;
+    padding: 2.5rem;
+}
+
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.header__title{
+    font-size: 2rem;
+}
+
+.unread-count{
+    background-color: var(--Blue);
+    color: var(--White);
+    font-size: 1.5rem;
+    padding: .2rem .7rem;
+    border-radius: 6px;
+    margin-left: .2rem;
+}
+
+/*Notification*/
+
+.notification{
+    display: grid;
+    column-gap: 1rem;
+    row-gap: .6rem;
+    grid-template-areas: 
+    "avatar title"
+    "avatar date"
+    ;
+    padding: 1rem;
+    grid-template-columns: min-content 1fr;
+    margin-bottom: 1rem;
+}
+
+.notification:last-child{
+    margin-bottom: 0;
+}
+
+.notification--mesagge{
+    grid-template-areas: 
+    "avatar title"
+    "avatar date"
+    ". message"
+    ;
+    margin-top: .7rem;
+}
+
+.notification--picture{
+    grid-template-areas: 
+    "avatar title image"
+    "avatar date image"
+    ;
+    grid-template-columns: min-content 1fr min-content;
+}
+
+.notification--unread{
+    background-color: var(--Very-light-grayish-blue);
+    border-radius: 8px;
+}
+
+.avatar{
+    width: 45px;
+    height: auto;
+    grid-area: avatar;
+}
+
+.notification__title strong{
+    color: #000;
+}
+
+.notification__title{
+    font-weight: normal;
+    grid-area: title;
+    color: var(--Dark-grayish-blue);
+    font-size: 1.1rem;
+}
+
+.link{
+    font-weight: bold;
+}
+
+.link--group{
+    color: var(--Blue);
+}
+
+.unread-bubble{
+    background-color: var(--Red);
+    width: 8px;
+    height: 8px;
+    display: inline-block;
+    margin-left: .5rem;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.date{
+    grid-area: date;
+    color: var(--Grayish-blue);
+}
+
+.notification__mesagge{
+    grid-area: message;
+    color: var(--Dark-grayish-blue);
+    border: 1px solid var(--Very-light-grayish-blue);
+    border-radius: 5px;
+    padding: 1.2rem;
+}
+
+.notification__image{
+    width: 45px;
+    height: auto;
+    grid-area: image;
+}
+
+
+@media(min-width: 1440px){
+    body{
+        align-items: center;
+    }
+    
+}
